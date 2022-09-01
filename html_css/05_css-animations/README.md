@@ -1,0 +1,5 @@
+- Html nicht verändern
+- Pseudoklassen/selektoren
+- Pseudoelemente
+- Keyframes
+- Komponentenstruktur

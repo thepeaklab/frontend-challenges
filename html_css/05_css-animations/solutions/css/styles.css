@@ -1,0 +1,44 @@
+@import url('components/btn-modern.css');
+@import url('components/btn-fade-in.css');
+@import url('components/btn-fancy.css');
+@import url('components/btn-shake.css');
+
+:root {
+  --green: #1db954;
+  --black: #001314;
+  --angle: 8px;
+  --angle-o: 4px;
+  --white: #fff;
+  --orange: 163, 49, 0;
+  --blue-grey: #2b3a67;
+  --olive: #536e49;
+  --transition-all: all 350ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: var(--white);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.main-wrapper {
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  justify-content: center;
+}
