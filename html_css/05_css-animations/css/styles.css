@@ -1,7 +1,13 @@
 /* Hier ist Platz um deine Komponenten zu importieren */
 
 :root {
-  /* Hier kannst du Variablen deklarieren */
+  --green: #1db954;
+  --black: #001314;
+  --white: #fff;
+  --blue-grey: #2b3a67;
+  --dark-green: #536e49;
+  --orange: 163, 49, 0;
+  /* Hier kannst du noch Variablen deklarieren */
 }
 
 /* Hier haben wir schonmal etwas für dich aufgeräumt */

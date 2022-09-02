@@ -20,3 +20,33 @@ Deine Ordnerstruktur sollte also wie folgt aussehen:
 │   └── styles.css
 └── index.html
 ```
+
+## Die Buttons
+
+### 01 - Modern
+
+Ein moderner Klassiker: Abgerundete Ecken, Schatten beim hovern und Transparenz beim Click!
+
+![btn-modern](assets/btn-modern.gif)
+
+### 02 - Fade-In
+
+Hier ist schon etwas mehr gefragt: Der Text auf dem Button verschiebt sich beim Hover nach links. Zudem erscheint ein Icon, welches beim Click zu einem anderen Icon wird!
+
+![btn-fade-in](assets/btn-fade-in.gif)
+
+### 03 - Fancy
+
+Bei diesem Retro button kommt einiges zusammen. Denk dran, dass Markup darf nicht verändert werden!
+
+![btn-fancy](assets/btn-fancy.gif)
+
+### 04 - Shake
+
+Hier wird es nochmal besonders: Versuche dir mit Keyframe-Animationen das Leben etwas leichter zu machen.
+
+![btn-shake](assets/btn-shake.gif)
+
+### 05 - Make it yours!
+
+Zeig was du kannst! Entwickle deinen eigenen Button. Dir sind keine Grenzen gesetzt!
