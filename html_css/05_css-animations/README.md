@@ -6,8 +6,7 @@ Auch hier steckt der Teufel wieder im Detail: Versuche die Designs so detaillier
 
 ## Organisation des css
 
-Damit das ganze etwas übersichtlicher bleibt, sollst du für die jeweiligen Buttons ein eigenes Stylesheet anlegen. Diese Stylesheets importierst du in `styles.css`.
-Deine Ordnerstruktur sollte also wie folgt aussehen:
+Damit das ganze etwas übersichtlicher bleibt, sollst du für die jeweiligen Buttons ein eigenes Stylesheet anlegen. Diese Stylesheets importierst du in `styles.css`. Deine Ordnerstruktur sollte also wie folgt aussehen:
 
 ```
 .
@@ -25,7 +24,7 @@ Deine Ordnerstruktur sollte also wie folgt aussehen:
 
 ### 01 - Modern
 
-Ein moderner Klassiker: Abgerundete Ecken, Schatten beim hovern und Transparenz beim Click!
+Ein moderner Klassiker: Abgerundete Ecken, Schatten beim Hovern und Transparenz beim Click!
 
 ![btn-modern](assets/btn-modern.gif)
 
@@ -37,7 +36,7 @@ Hier ist schon etwas mehr gefragt: Der Text auf dem Button verschiebt sich beim 
 
 ### 03 - Fancy
 
-Bei diesem Retro button kommt einiges zusammen. Denk dran, dass Markup darf nicht verändert werden!
+Bei diesem Retro-Button kommt einiges zusammen. Denk dran, das Markup darf nicht verändert werden!
 
 ![btn-fancy](assets/btn-fancy.gif)
 
