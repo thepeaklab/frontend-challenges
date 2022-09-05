@@ -38,6 +38,7 @@ Im folgenden eine kleine Übersicht der wichtigsten HTML-Tags. Eine komplette Li
 | `<ol>`                | Ordered-List                      |
 | `<ul>`                | Unordered-List                    |
 | `<li>`                | List-Item                         |
+| `<a>`                 | Anchor/Reference/Link             |
 
 ### Aufgabe
 
