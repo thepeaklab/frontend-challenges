@@ -22,11 +22,13 @@ Im Abschnitt des ([`head`](https://www.w3schools.com/TAgs/tag_head.asp)), welche
 Mit dem meta Tag charset utf-8 setzen wir die Character Dekodierung auf den verbreitesten Standard.
 Das meta Tag `name=viewport` gibt uns die Möglichkeit die Dokumenten-Breite mit den Geräte-Breite gleichzusetzten. Dies ist ein Abweichen vom Browser-Standardverhalten welches mobile Endgeräte noch nicht bedenkt und bei kleiner Anzeige ein breiteres Dokument mit horizontalem Scrollen bereitstellt.
 
-### Aufgabe
+### Aufgabe 1
 
 Ergänze den [] Doctype sowie den [] Head in deiner `Hello-World` Webseite aus der vorherigen Challenge. (Falls du erst mit dieser Challenge einsteigst haben wir dir [hier](index.html) eine Lösung für dich vorbereitet)
 
 ## Style/CSS
+
+### CSS Basics
 
 Um Anpassungen an der Standartdarstellung vorzunehmen kannst du HTML-Tags mit CSS-Styles/Rules versehen. [CSS steht für Cascading-Style-Sheet](https://developer.mozilla.org/en-US/docs/Glossary/CSS) -  Hierzu kannst du das _Style-Sheet_ auf unterschiedliche Weisen dem Browser zur Verfügung stellen. Die für uns hier unkomplizierteste ist das Öffnen eines Style-Tags im `head`.
 
@@ -52,8 +54,12 @@ Denn Attribute können ebenfalls als Selector genutzt werden und entkoppeln dein
 }
 ```
 
-### Aufgabe
+### Aufgabe 2
 
 Informiere dich über mögliche Declarations und Style das [hier](index.html) vorbereitete Markup. ⚠️ Versuche ohne das Markup zu verändern die Styles aus dem folgenden Bild zu erreichen.
 
 ![Webseite](website-styled.png "Hello-World Webseite")
+
+### Cascading
+
+![Webseite](website-styled-scrolling.gif "Hello-World Webseite")

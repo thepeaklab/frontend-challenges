@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello-World News</title>
+    <style>
+      /* styling goes here*/
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto&display=swap");
+
+      html,
+      body {
+        margin: 0;
+        color: #333333;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Noto Serif", serif;
+      }
+
+      p,
+      ol,
+      ul {
+        line-height: 1.6;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .wrapper {
+        display: flex;
+        position: relative;
+      }
+
+      .wrapper > * {
+        flex: 0 1 50%;
+      }
+
+      .header {
+        background-color: #ffde8c;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .navigation {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .navigation__link {
+        text-decoration: none;
+        color: #333333;
+        background-color: #ffffff;
+        padding: 6px 14px;
+        border-radius: 12px;
+        margin: 6px;
+        text-align: center;
+      }
+
+      .content {
+        max-width: 480px;
+        margin: 0 auto;
+        padding: 30px;
+      }
+
+      .section {
+        border-bottom: 1px solid #cccccc;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      .footer {
+        border-top: 1px solid #cccccc;
+        padding: 30px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .footer h2 {
+        font-size: 12px;
+      }
+
+      .footer p {
+        font-size: 9px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <img src="./assets/logo.png" />
+        <nav class="navigation">
+          <a class="navigation__link" href="#">Food 🍕</a>
+          <a class="navigation__link" href="#">Travel 🛫</a>
+          <a class="navigation__link" href="#">Kaffee ☕️</a>
+          <a class="navigation__link" href="#">Beauty 💅</a>
+        </nav>
+      </header>
+      <div class="content">
+        <section id="landing" class="section">
+          <h1>Hello-World 🌍 News</h1>
+          <p>Willkommen auf deinem Portal für Hyper-News!</p>
+          <p>
+            Hello-World News ist ein Online-Nachrichtenportal auf dem du immer
+            Aktuell bleiben kannst. Wir arbeiten mit Hochdruck rund um Uhr an
+            den besten Artikeln und liefern die diese perfekt formatiert auf
+            dein digitales Endgerät
+          </p>
+        </section>
+        <section id="categories" class="section">
+          <h2>Unsere Kategorien:</h2>
+          <ul>
+            <li>Food 🍕</li>
+            <li>Travel 🛫</li>
+            <li>Kaffee ☕️</li>
+            <li>Beauty 💅</li>
+          </ul>
+        </section>
+        <section id="about" class="section">
+          <h2>Hyper</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+          <h3>Was ist Hyper?</h3>
+          <ol>
+            <li>größer</li>
+            <li>lauter</li>
+            <li>weiter</li>
+            <li>🚀</li>
+          </ol>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+        </section>
+      </div>
+    </div>
+    <footer class="footer">
+      <div>
+        <h2>Impressum</h2>
+        <p>
+          Max Mustermann<br />
+          Musterstraße 11a<br />
+          231123 Musterstadt<br />
+          Tel: 0231/3123211
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
