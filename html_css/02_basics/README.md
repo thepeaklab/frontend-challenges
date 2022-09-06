@@ -60,7 +60,31 @@ Informiere dich über mögliche Declarations und Style das [hier](index.html) vo
 
 ![Webseite](website-styled.png "Hello-World Webseite")
 
+### Cascading
+
+TBD
+
+### Pseudo-Classes
+
+TBD
+
+```css
+.button:hover {
+    /*...*/
+}
+
+.link:visted {
+    /*...*/
+}
+
+.item:last-child {
+    /*...*/
+}
+```
+
 ### Positioning
+
+TBD
 
 #### Challenge 3
 
@@ -69,6 +93,8 @@ Für diese Challenge musst du das Markup verändern. Füge einen Header mit Logo
 ![Webseite](website-styled-scrolling.gif "Hello-World Webseite")
 
 ### Media Queries
+
+TBD
 
 ```css
 @media screen and (min-width: 768px) {
