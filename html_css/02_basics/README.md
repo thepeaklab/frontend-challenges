@@ -22,7 +22,7 @@ Im Abschnitt des ([`head`](https://www.w3schools.com/TAgs/tag_head.asp)), welche
 Mit dem meta Tag charset utf-8 setzen wir die Character Dekodierung auf den verbreitesten Standard.
 Das meta Tag `name=viewport` gibt uns die Möglichkeit die Dokumenten-Breite mit den Geräte-Breite gleichzusetzten. Dies ist ein Abweichen vom Browser-Standardverhalten welches mobile Endgeräte noch nicht bedenkt und bei kleiner Anzeige ein breiteres Dokument mit horizontalem Scrollen bereitstellt.
 
-### Aufgabe 1
+### Challenge 1
 
 Ergänze den [] Doctype sowie den [] Head in deiner `Hello-World` Webseite aus der vorherigen Challenge. (Falls du erst mit dieser Challenge einsteigst haben wir dir [hier](index.html) eine Lösung für dich vorbereitet)
 
@@ -54,12 +54,30 @@ Denn Attribute können ebenfalls als Selector genutzt werden und entkoppeln dein
 }
 ```
 
-### Aufgabe 2
+#### Challenge 2
 
 Informiere dich über mögliche Declarations und Style das [hier](index.html) vorbereitete Markup. ⚠️ Versuche ohne das Markup zu verändern die Styles aus dem folgenden Bild zu erreichen.
 
 ![Webseite](website-styled.png "Hello-World Webseite")
 
-### Cascading
+### Positioning
+
+#### Challenge 3
+
+Für diese Challenge musst du das Markup verändern. Füge einen Header mit Logo und Navigation hinzu. Zentriere den Inhalt des Headers und achte auf das Scrollverhalten im Beispiel.
 
 ![Webseite](website-styled-scrolling.gif "Hello-World Webseite")
+
+### Media Queries
+
+```css
+@media screen and (min-width: 768px) {
+    /* desktop styles */
+}
+```
+
+#### Challenge 4
+
+Verändere dein Stylesheet, Ziel ist es mit der oben erläuterten Media Query alle Desktop spezifischen Declarations zur Ausnahmeregelung für große Bildschirmgrößen zu machen.
+
+![Webseite](website-mobile.gif "Hello-World Webseite")
