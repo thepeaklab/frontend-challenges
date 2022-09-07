@@ -10,3 +10,6 @@ Dieses Repository ist eine Sammlung von Challenges für unsere Studenten und Neu
 | 2     | js                        |
 | 3     | react                     |
 | 4     | state                     |
+
+### JS Challenges
+* [Advent of Code](https://adventofcode.com)
