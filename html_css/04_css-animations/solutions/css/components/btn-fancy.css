@@ -1,0 +1,77 @@
+.btn-fancy {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  transition: all 0.15s linear 0s;
+  background-color: var(--green);
+  padding: 15px 25px;
+  text-transform: uppercase;
+  color: var(--black);
+  font-family: 'Monaco';
+  letter-spacing: 1px;
+  box-shadow: -6px 6px 0 var(--black);
+  text-decoration: none;
+}
+
+.btn-fancy::after {
+  transition: all 0.15s linear 0s;
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: -4px;
+  width: var(--angle);
+  height: var(--angle);
+  background-color: var(--black);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.btn-fancy::before {
+  transition: all 0.15s linear 0s;
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  right: 2px;
+  width: var(--angle);
+  height: var(--angle);
+  background-color: var(--black);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.btn-fancy:hover {
+  top: 3px;
+  left: -3px;
+  box-shadow: -3px 3px 0 var(--black);
+}
+
+.btn-fancy:hover::after {
+  top: 1px;
+  left: -2px;
+  width: var(--angle-hover);
+  height: var(--angle-hover);
+}
+
+.btn-fancy:hover::before {
+  bottom: -2px;
+  right: 1px;
+  width: var(--angle-hover);
+  height: var(--angle-hover);
+}
+
+.btn-fancy:active {
+  top: 6px;
+  left: -6px;
+  box-shadow: none;
+}
+
+.btn-fancy:active::before {
+  bottom: 1px;
+  right: 1px;
+}
+
+.btn-fancy:active::after {
+  top: 1px;
+  left: 1px;
+}
