@@ -2,6 +2,8 @@
 
 In dieser Challenge lernst du mit Javascript auf die DOM (Document-Object-Model) zuzugreifen und sie mit event handlern zu manipulieren. Das Ziel ist es einen funktionierenden Umsatzsteuer Rechner zu entwickeln. Das Markup sowie grundlegendes css wird dir für die Aufgabe bereitgestellt. Das Javascript sollst du eigenständig in einer Datei organisieren und in der `index.html` laden, ansonsten arbeitest du mit dem vorgegebenen Markup.
 
+![Umsatzsteuer-Rechner](umsatzsteuer-rechner.png "Umsatzsteuer-Rechner im Browser")
+
 ## Anforderungen
 
 Bei Eingabe in ein beliebiges Feld wird in den anderen Feldern der entsprechende Wert ausgegeben.
