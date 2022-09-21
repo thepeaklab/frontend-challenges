@@ -4,6 +4,8 @@
 
 In dieser Challenge baust du eine Wetter-App im Browser. Dazu fragst du Wetter-Daten von der offenen API [Open-Meteao](https://open-meteo.com/en/docs) an deiner Position ab um sie im Browser anzuzeigen. Versuche mindestens die aktuelle Temperatur und eine Beschreibung der aktuellen Wetterlage anzuzeigen. Gehe ausserdem in der Darstellung der Seite auf das aktuelle Wetter ein. Wie genau du dies anstellst bleibt dir überlassen.
 
+Benutze keine Packages, Libaries oder Frameworks. Nur HTML, CSS & JavaScript (Vanilla) sind erlaubt.
+
 Beispiel API-URL:
 
 ```text
@@ -14,4 +16,4 @@ https://api.open-meteo.com/v1/forecast?latitude=53.073635&longitude=8.806422&dai
 
 ## Zusatz
 
-Die API liefert noch zahlreiche weitere Werte wie z.B. Windrichtung. Wenn du den ersten Teil der Challenge problemlos lösen konntest, überlege dir weitere Features und Visualisiere diese. (Windrichtung, Wochenaussicht, Städteauswahl)
+Die API liefert noch zahlreiche weitere Werte wie z.B. Windrichtung. Wenn du den ersten Teil der Challenge problemlos lösen konntest, überlege dir weitere Features und visualisiere diese. (Windrichtung, Wochenaussicht, Städteauswahl)
