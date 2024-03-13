@@ -62,11 +62,45 @@ Informiere dich über mögliche Declarations und Style das [hier](index.html) vo
 
 ### Cascading
 
-TBD
+In CSS bezieht sich der Begriff "Cascading" auf die Art und Weise, wie Styles auf HTML-Elemente angewendet werden. Wenn mehrere Styles für dasselbe Element definiert sind, folgt der Browser einer Reihe von Regeln, um zu bestimmen, welcher Style angewendet werden soll.
+
+Die Reihenfolge des Cascadings ist wie folgt:
+
+1. Inline-Styles: Styles, die direkt auf dem HTML-Element mit dem `style`-Attribut definiert sind.
+2. Interne Stylesheets: Styles, die innerhalb der `<style>`-Tags im `<head>`-Bereich des HTML-Dokuments definiert sind.
+3. Externe Stylesheets: Styles, die in separaten CSS-Dateien definiert sind und mit dem HTML-Dokument über das `<link>`-Tag verknüpft sind.
+
+Wenn sich konkurrierende Styles auf verschiedenen Ebenen befinden, wird der Style mit der höchsten Spezifität angewendet. Die Spezifität wird durch die Kombination der Selektoren bestimmt, die auf das Element abzielen.
+
+Es ist wichtig, die kaskadierende Natur von CSS zu verstehen, um Webseiten effektiv zu gestalten und die Hierarchie der Styles zu verwalten.
+
+### Spezifität
+
+In CSS bezieht sich der Begriff "Spezifität" auf die Art und Weise, wie Styles auf HTML-Elemente angewendet werden. Wenn mehrere Styles für dasselbe Element definiert sind, folgt der Browser einer Reihe von Regeln, um zu bestimmen, welcher Style angewendet werden soll.
+
+Die Spezifität wird durch die Kombination der Selektoren bestimmt, die auf das Element abzielen. Dabei werden verschiedene Faktoren berücksichtigt, wie z.B. die Anzahl der IDs, Klassen und Elementnamen in einem Selektor.
+
+Im Allgemeinen gilt: Je spezifischer ein Selektor ist, desto höher ist seine Spezifität und desto wahrscheinlicher wird er angewendet.
+
+Es ist wichtig, die Spezifität zu verstehen, um Konflikte zwischen Styles zu vermeiden und die gewünschten Styles auf die richtigen Elemente anzuwenden.
+
+Hier sind einige Beispiele zur Veranschaulichung der Spezifität:
+
+- `h1` hat eine niedrigere Spezifität als `.title`, da der Klassenselektor spezifischer ist.
+- `.content p` hat eine höhere Spezifität als `.content`, da der Selektor zwei Elementnamen enthält.
+- `#header .logo` hat eine höhere Spezifität als `.logo`, da der Selektor eine ID und eine Klasse enthält.
+
+Es ist wichtig, die Spezifität der Selektoren zu berücksichtigen, um sicherzustellen, dass die gewünschten Styles angewendet werden.
 
 ### Pseudo-Classes
 
-TBD
+Pseudo-Klassen sind spezielle CSS-Selektoren, die verwendet werden, um bestimmte Zustände oder Eigenschaften von HTML-Elementen auszuwählen und zu stylen. Sie ermöglichen es uns, Elemente basierend auf Ereignissen oder Zuständen auszuwählen, die nicht direkt im HTML-Code angegeben sind.
+
+Ein Beispiel für eine Pseudo-Klasse ist :hover. Diese Pseudo-Klasse wird angewendet, wenn der Mauszeiger über ein Element schwebt. Wir können es verwenden, um das Styling des Elements zu ändern, wenn der Benutzer mit der Maus darüber fährt. Zum Beispiel können wir den Hintergrund eines Links ändern, wenn der Benutzer mit der Maus darüber fährt:
+
+Eine andere nützliche Pseudo-Klasse ist :nth-child(). Diese Pseudo-Klasse ermöglicht es uns, bestimmte Elemente basierend auf ihrer Position in der Elternliste auszuwählen. Zum Beispiel können wir jedes zweite Element in einer Liste hervorheben:
+
+Es gibt viele weitere Pseudo-Klassen wie :active, :focus, :first-child, :last-child, usw. Jede Pseudo-Klasse hat ihre eigene Funktion und Verwendung. Sie ermöglichen es uns, CSS-Stile auf spezifische Elemente anzuwenden, basierend auf ihren Zuständen oder Positionen.
 
 ```css
 .button:hover {
