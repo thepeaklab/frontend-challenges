@@ -3,16 +3,16 @@
 ## Doctype & Head
 
 ```html
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hello-World News</title>
-    </head>
-    <body>
-        hello world
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello-World News</title>
+  </head>
+  <body>
+    hello world
+  </body>
 </html>
 ```
 
@@ -30,27 +30,25 @@ Ergänze den [] Doctype sowie den [] Head in deiner `Hello-World` Webseite aus d
 
 ### CSS Basics
 
-Um Anpassungen an der Standartdarstellung vorzunehmen kannst du HTML-Tags mit CSS-Styles/Rules versehen. [CSS steht für Cascading-Style-Sheet](https://developer.mozilla.org/en-US/docs/Glossary/CSS) -  Hierzu kannst du das _Style-Sheet_ auf unterschiedliche Weisen dem Browser zur Verfügung stellen. Die für uns hier unkomplizierteste ist das Öffnen eines Style-Tags im `head`.
+Um Anpassungen an der Standartdarstellung vorzunehmen kannst du HTML-Tags mit CSS-Styles/Rules versehen. [CSS steht für Cascading-Style-Sheet](https://developer.mozilla.org/en-US/docs/Glossary/CSS) - Hierzu kannst du das _Style-Sheet_ auf unterschiedliche Weisen dem Browser zur Verfügung stellen. Die für uns hier unkomplizierteste ist das Öffnen eines Style-Tags im `head`.
 
 ```html
 <style>
-    /* style goes here */
+  /* style goes here */
 </style>
 ```
 
 Innerhalb des Style-Tags kannst du nun CSS-Rules definieren. Eine CSS-Rule besteht aus einem Selector und einer Declaration (welche wiederum aus einer Property und einer zugewiesenen Value besteht). Der Selector kann ein Tag-Typ selbst sein, wie z.B. `p`, `h1`, `section`... Allerdings empfehlen wir dir allen Tags die du mit Styles versehen willst einen Klassennamen Attribut `class=""` zu verleihen.
 
 ```html
-<div class="content">
-    ...
-</div>
+<div class="content">...</div>
 ```
 
 Denn Attribute können ebenfalls als Selector genutzt werden und entkoppeln deine Styles vom Tag-Typ der sich unter Umständen später noch einmal ändern kann. Klassennamen werden mit einem vorangehenden `.` versehen, ID's mit einer `#` und belibige andere Attribute wie z.B. `data-attr="test"` sind ebenfalls möglich `[data-attr="test"]`. Dem Selector folgen innerhalb `{}` dann die Declarations (min. eine). [Style Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference#index) einer Declaration gibt es zahlreiche. Wie ihre spezifische `Value` angegeben wird solltest du zu Begin nachschlagen. Die `width` beispielsweise kann in `px`, `em`, `rem`, `vh` und `%` angegeben werden, akzeptiert jedoch auch spezifische angaben wie `max-content` usw. hier gilt es ein Rabbithole an Möglichkeiten zu erkunden.
 
 ```css
 .content {
-    max-width: 480px;
+  max-width: 480px;
 }
 ```
 
@@ -104,21 +102,23 @@ Es gibt viele weitere Pseudo-Klassen wie :active, :focus, :first-child, :last-ch
 
 ```css
 .button:hover {
-    /*...*/
+  /*...*/
 }
 
 .link:visted {
-    /*...*/
+  /*...*/
 }
 
 .item:last-child {
-    /*...*/
+  /*...*/
 }
 ```
 
 ### Positioning
 
-TBD
+Durch Positioning können Elemente auf der Seite platziert oder in ihrem Verhalten verändert werden.
+Dabei können sie sich überlagern, relativ zueinander verschoben oder an das Browserfenster gekoppelt werden.
+Sieh dir dazu einmal [diesen Artikel](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning) an. Das MDN ist eine gute Quelle zum eigenständigen Lernen und Nachschlagen.
 
 #### Challenge 3
 
@@ -128,11 +128,15 @@ Für diese Challenge musst du das Markup verändern. Füge einen Header mit Logo
 
 ### Media Queries
 
-TBD
+Mithilfe von Media Queries kann das Styling von Elementen von der verfügbaren Fensterbreite abhängig gemacht werden.
+Bspw. sollen Elemente auf einem schmalen Handyscreen untereinander dargestellt werden, auf einem breiten Desktop-Browser aber nebeneinander.
+Entscheidend ist dabei die minimale Breite des Fensters, sobald diese erreicht wird, können neue Styles hinzugefügt werden oder die bisherigen überschreiben.
+
+Weitere Infos [hier](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries).
 
 ```css
 @media screen and (min-width: 768px) {
-    /* desktop styles */
+  /* desktop styles */
 }
 ```
 
