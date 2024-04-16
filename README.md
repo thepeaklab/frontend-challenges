@@ -30,7 +30,7 @@ For advanced learners, the introduction may be skipped.
 
 ### Code of Conduct
 
-Please read our [Code of conduct](./CODE_OF_CONDUCT) to keep our community open and respectable. 💖
+Please read our [Code of conduct](./CODE_OF_CONDUCT.md) to keep our community open and respectable. 💖
 
 ### Want to help?
 
