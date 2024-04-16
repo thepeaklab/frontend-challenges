@@ -22,7 +22,7 @@ Du wirst dir jedoch noch überlegen müssen, wie du deine Styles organisieren m�
 
 ## Resources
 
-Falls du noch keine Erfahrung mit React hast findest du hier einen [Quickstart-Guide](https://beta.reactjs.org/learn), welcher dich in die Prinzipien von React einführt.
+Falls du noch keine Erfahrung mit React hast findest du hier einen [Quickstart-Guide](https://react.dev/learn), welcher dich in die Prinzipien von React einführt.
 
 ## Challenge
 
