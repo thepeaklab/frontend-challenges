@@ -8,7 +8,7 @@ Hypertext Markup Language ist keine Programmiersprache, lediglich eine Auszeichn
 
 ### Format
 
-Um eine gültige HTML-Datei die von Browsern gelesen werden kann zu erzeugen braucht es nicht viel. Eine Textdatei mit den Endungen `.html` oder `.htm` mit minimalem Boilerplate genügt.
+Um eine gültige HTML-Datei die von Browsern gelesen werden kann zu erzeugen braucht es nicht viel. Eine Textdatei mit den Endungen `.html` oder `.htm` mit minimalem Boilerplate genügt. Öffne eine solche Datei in einem Browser - was du siehst ist deine erste Website 🎉!
 
 ```html
 <html>
