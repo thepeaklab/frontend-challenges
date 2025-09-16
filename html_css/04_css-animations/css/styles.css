@@ -19,5 +19,143 @@
 
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.btn-modern {
+  color: rgb(var(--orange));
+  border: 1px solid rgb(var(--orange));
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn-modern:hover {
+  box-shadow: 0 0 3px 0 rgb(var(--orange));
+}
+.btn-modern:active {
+  color: lightgray;
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 0 0;
+}
+
+.btn-fade-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  background-color: var(--blue-grey);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.btn-fade-in-text {
+  font-size: 14px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-fade-in-emoji {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-15px, -50%) scale(0);
+  transition: all 0.3s ease;
+}
+
+.btn-fade-in-emoji2 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-15px, -50%) scale(0);
+}
+
+.btn-fade-in:hover .btn-fade-in-text {
+  transform: translateX(-12px);
+}
+
+.btn-fade-in:hover .btn-fade-in-emoji {
+  transform: translate(-15px, -50%) scale(1.5);
+}
+
+.btn-fade-in:active .btn-fade-in-emoji2 {
+  transform: translate(-15px, -50%) scale(1.5);
+}
+
+.btn-fancy {
+  background-color: var(--green);
+  padding: 10px 20px;
+  box-shadow: -2px 2px;
+  cursor: pointer;
+}
+
+.btn-shake {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-shake:hover {
+  animation-name: boxshake;
+  animation-duration: 1s;
+}
+
+.btn-shake:hover .btn-shake-text {
+  animation-name: textshake;
+  animation-duration: 1s;
+}
+
+@keyframes textshake {
+  0% {
+    transform: translateX(-150px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(-15px);
+  }
+}
+
+@keyframes boxshake {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-2.5deg);
+  }
+  40% {
+    transform: rotate(2.5deg);
+  }
+
+  60% {
+    transform: rotate(-2.5deg);
+  }
+
+  80% {
+    transform: rotate(2.5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }

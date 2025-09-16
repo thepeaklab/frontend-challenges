@@ -12,9 +12,9 @@ Um eine gültige HTML-Datei die von Browsern gelesen werden kann zu erzeugen bra
 
 ```html
 <html>
-    <body>
-        hello world
-    </body>
+  <body>
+    hello world
+  </body>
 </html>
 ```
 
@@ -28,20 +28,20 @@ Nun gibt es neben diesem eher Abstrakten Body auch noch etliche weitere HTML-Tag
 
 Im folgenden eine kleine Übersicht der wichtigsten HTML-Tags. Eine komplette Liste aller HMTL-Tags findest du [hier](https://www.w3schools.com/TAgs/default.asp). Die Funktion einiger HTML-Tags werden wir auf Englisch erläutern um dichter am orginal Namen zu bleiben.
 
-|  Tag                  | Funktion                              |
-|-----------------------|---------------------------------------|
-| `<html>`              | Begin und Ende einer HTML-Datei       |
-| `<head>`              | Meta-Daten über die Seite             |
-| `<body>`              | Darzustellender Inhalt                |
-| `<h1>`,`<h2>`...      | Überschrift hirachisch `h1`-`h6`      |
-| `<p>`                 | Paragraph/Absatz                      |
-| `<ol>`                | Ordered-List                          |
-| `<ul>`                | Unordered-List                        |
-| `<li>`                | List-Item                             |
-| `<a>`                 | Anchor/Reference/Link                 |
-| `<header>`            | Webseiten-Kopfzeile mit Logo etc.     |
-| `<footer>`            | Webseiten-Fußzeile mit Legal-Info etc.|
-| `<img>`               | Bilder (Images)                       |
+| Tag              | Funktion                               |
+| ---------------- | -------------------------------------- |
+| `<html>`         | Begin und Ende einer HTML-Datei        |
+| `<head>`         | Meta-Daten über die Seite              |
+| `<body>`         | Darzustellender Inhalt                 |
+| `<h1>`,`<h2>`... | Überschrift hirachisch `h1`-`h6`       |
+| `<p>`            | Paragraph/Absatz                       |
+| `<ol>`           | Ordered-List                           |
+| `<ul>`           | Unordered-List                         |
+| `<li>`           | List-Item                              |
+| `<a>`            | Anchor/Reference/Link                  |
+| `<header>`       | Webseiten-Kopfzeile mit Logo etc.      |
+| `<footer>`       | Webseiten-Fußzeile mit Legal-Info etc. |
+| `<img>`          | Bilder (Images)                        |
 
 ### Aufgabe
 
