@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello-World News</title>
+    <style>
+      /* styling goes here*/
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto&display=swap");
+
+      html,
+      body {
+        margin: 0;
+        color: #333333;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Noto Serif", serif;
+      }
+
+      p,
+      ol,
+      ul {
+        line-height: 1.6;
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="md:flex">
+      <header
+        class="fixed top-0 flex w-full flex-1 items-start bg-amber-200 p-3 md:sticky md:h-screen md:flex-col md:items-center md:justify-center"
+      >
+        <div class="flex flex-row gap-2 md:flex-col md:items-center">
+          <img src="./assets/logo.png" />
+          <nav>
+            <ul class="flex flex-row gap-2 md:flex-col">
+              <li>
+                <a
+                  href="#categories"
+                  class="block rounded-2xl bg-white p-1 text-center whitespace-nowrap shadow-2xs transition-colors hover:bg-amber-50"
+                  >Food 🍕</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#landing"
+                  class="block rounded-2xl bg-white p-1 text-center whitespace-nowrap shadow-2xs transition-colors hover:bg-amber-50"
+                  >Travel 🛫</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="block rounded-2xl bg-white p-1 text-center whitespace-nowrap shadow-2xs transition-colors hover:bg-amber-50"
+                  >Kaffee ☕️</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="block rounded-[14px] bg-white p-1 text-center whitespace-nowrap shadow-2xs transition-colors hover:bg-amber-50"
+                  >Beauty 💅</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="flex-1 p-4 md:mt-0 mt-9">
+        <section id="landing" class="pb-2">
+          <h1 class="pt-3 pb-3 text-2xl">Hello-World 🌍 News</h1>
+          <p class="pb-1">Willkommen auf deinem Portal für Hyper-News!</p>
+          <p>
+            Hello-World News ist ein Online-Nachrichtenportal auf dem du immer
+            Aktuell bleiben kannst. Wir arbeiten mit Hochdruck rund um Uhr an
+            den besten Artikeln und liefern die diese perfekt formatiert auf
+            dein digitales Endgerät
+          </p>
+        </section>
+        <section id="categories" class="border-t border-gray-200 pt-4 pb-2">
+          <h2 class="pb-2 text-lg font-black">Unsere Kategorien:</h2>
+          <ul class="list-disc pl-8">
+            <li>Food 🍕</li>
+            <li>Travel 🛫</li>
+            <li>Kaffee ☕️</li>
+            <li>Beauty 💅</li>
+          </ul>
+        </section>
+        <section id="about" class="border-t border-gray-200 pt-4">
+          <h2 class="pb-2 text-lg font-black">Hyper</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+          <h3 class="text-l pt-5 pb-2 font-black">Was ist Hyper?</h3>
+          <ol class="list-decimal pb-3 pl-8">
+            <li>größer</li>
+            <li>lauter</li>
+            <li>weiter</li>
+            <li>🚀</li>
+          </ol>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+        </section>
+      </div>
+    </div>
+    <footer class="border-t border-gray-200">
+      <div class="flex p-3 justify-end text-xs">
+        <div>
+          <h2 class="text-base font-black">Impressum</h2>
+          <p>
+            Max Mustermann<br />
+            Musterstraße 11a<br />
+            231123 Musterstadt<br />
+            Tel: 0231/3123211
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
