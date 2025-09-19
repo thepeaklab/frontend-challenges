@@ -1,0 +1,20 @@
+.wrapper {
+  width: 400px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-image: url(../assets/weather.png);
+}
+
+.currentWeather {
+  text-align: center;
+}
+
+.temperature {
+  font-size: 2rem;
+}
