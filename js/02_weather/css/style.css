@@ -8,13 +8,44 @@
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  gap: 1rem;
+}
+
+.wrapper::after {
+  content: "";
+  width: 400px;
+  height: 800px;
+  position: absolute;
   background-image: url(../assets/weather.png);
+  filter: blur(2px);
+  background-size: cover;
+  z-index: -1;
 }
 
 .currentWeather {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  border-radius: 2rem;
 }
-
 .temperature {
   font-size: 2rem;
+}
+
+.dailyWeather {
+  width: 95%;
+  height: 20%;
+  display: flex;
+  gap: 0;
+  background-color: rgba(211, 211, 211, 0.244);
+  border-radius: 1rem;
+}
+.dailyWeather p {
+  padding-left: 2rem;
+}
+
+.weekWeather {
+  width: 95%;
+  background-color: rgba(211, 211, 211, 0.244);
+  border-radius: 1rem;
 }

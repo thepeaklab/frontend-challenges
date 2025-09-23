@@ -15,7 +15,7 @@ class WeatherApp {
         status: data.current.weather_code,
       };
     } catch {
-      console.log("Keine daten gefunden!");
+      console.error("Keine daten gefunden!");
       return null;
     }
   }
