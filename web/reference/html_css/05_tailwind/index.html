@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello-World News</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto&display=swap");
+
+      html,
+      body {
+        margin: 0;
+        color: #333333;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Noto Serif", serif;
+      }
+
+      p,
+      ol,
+      ul {
+        line-height: 1.6;
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <div class="min-h-screen">
+      <header class="sticky top-0 z-10 flex flex-col items-center gap-2 border-b border-gray-200 bg-white/90 p-4 backdrop-blur md:flex-row md:justify-between md:px-8">
+        <img class="h-10" src="./assets/logo.png" alt="Hello-World News" />
+        <nav class="flex flex-wrap justify-center gap-4 text-sm">
+          <a class="hover:underline" href="#">Food 🍕</a>
+          <a class="hover:underline" href="#">Travel 🛫</a>
+          <a class="hover:underline" href="#">Kaffee ☕️</a>
+          <a class="hover:underline" href="#">Beauty 💅</a>
+        </nav>
+      </header>
+      <div class="mx-auto px-4 md:max-w-2xl">
+        <section id="landing" class="py-8">
+          <h1 class="mb-4 text-3xl font-bold md:text-5xl">Hello-World 🌍 News</h1>
+          <p class="mb-2 text-lg">Willkommen auf deinem Portal für Hyper-News!</p>
+          <p>
+            Hello-World News ist ein Online-Nachrichtenportal auf dem du immer
+            Aktuell bleiben kannst.
+          </p>
+        </section>
+        <section id="categories" class="border-t border-gray-100 py-8">
+          <h2 class="mb-2 text-2xl">Unsere Kategorien:</h2>
+          <ul class="list-inside list-disc">
+            <li>Food 🍕</li>
+            <li>Travel 🛫</li>
+            <li>Kaffee ☕️</li>
+            <li>Beauty 💅</li>
+          </ul>
+        </section>
+        <section id="about" class="border-t border-gray-100 py-8">
+          <h2 class="mb-2 text-2xl">Hyper</h2>
+          <p class="mb-4">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua.
+          </p>
+          <h3 class="mb-2 text-xl">Was ist Hyper?</h3>
+          <ol class="list-inside list-decimal">
+            <li>größer</li>
+            <li>lauter</li>
+            <li>weiter</li>
+            <li>🚀</li>
+          </ol>
+        </section>
+      </div>
+    </div>
+    <footer class="bg-gray-800 px-4 py-8 text-white md:text-center">
+      <div>
+        <h2 class="mb-2 text-xl">Impressum</h2>
+        <p>
+          Max Mustermann<br />
+          Musterstraße 11a<br />
+          231123 Musterstadt<br />
+          Tel: 0231/3123211
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
