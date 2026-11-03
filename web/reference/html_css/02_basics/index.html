@@ -5,127 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello-World News</title>
     <style>
-      * {
-        box-sizing: border-box;
-      }
+      /* styling goes here*/
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto&display=swap");
 
+      html,
       body {
         margin: 0;
-        font-family: Georgia, 'Times New Roman', serif;
         color: #333333;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Noto Serif", serif;
+      }
+
+      p,
+      ol,
+      ul {
         line-height: 1.6;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
       }
 
       .header {
+        background-color: #ffde8c;
+        display: flex;
+        flex-direction: row;
         position: sticky;
         top: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem;
-        background-color: #ffffff;
-        border-bottom: 1px solid #dddddd;
       }
 
       .logo {
-        height: 48px;
+        width: 60px;
+        height: 60px;
+        padding: 10px;
       }
 
-      .nav {
+      .navigation {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        flex-direction: row;
+        padding: 10px;
+        align-items: center;
       }
 
-      .nav a {
-        color: inherit;
+      .navigation__link {
         text-decoration: none;
-      }
-
-      .nav a:hover {
-        text-decoration: underline;
+        color: #333333;
+        background-color: #ffffff;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin: 5px;
+        flex-grow: 0;
       }
 
       .content {
-        padding: 1rem;
+        max-width: 480px;
         margin: 0 auto;
+        padding: 30px;
       }
 
-      .section + .section {
-        border-top: 1px solid #eeeeee;
+      .section {
+        border-bottom: 1px solid #cccccc;
+      }
+
+      .section:last-child {
+        border-bottom: none;
       }
 
       .footer {
-        padding: 2rem 1rem;
-        background-color: #222222;
-        color: #ffffff;
+        border-top: 1px solid #cccccc;
+        padding: 30px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .footer h2 {
+        font-size: 12px;
+      }
+
+      .footer p {
+        font-size: 9px;
       }
 
       @media screen and (min-width: 768px) {
         .header {
-          flex-direction: row;
-          justify-content: space-between;
-          padding: 1rem 2rem;
+          height: 100vh;
+          position: sticky;
+          top: 0;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
         }
 
-        .content {
-          max-width: 720px;
+        .logo {
+          width: 220px;
+          height: 220px;
+          padding: 0;
         }
 
-        .footer {
+        .navigation {
+          flex-direction: column;
+          padding: 20px;
+        }
+
+        .navigation__link {
+          text-decoration: none;
+          padding: 6px 14px;
+          border-radius: 12px;
+          margin: 6px;
           text-align: center;
+        }
+
+        .wrapper {
+          position: relative;
+          flex-direction: row;
+        }
+
+        .wrapper > * {
+          flex: 0 1 50%;
         }
       }
     </style>
   </head>
   <body>
-    <header class="header">
-      <img class="logo" src="assets/logo.png" alt="Hello-World News" />
-      <nav class="nav">
-        <a href="#">Food 🍕</a>
-        <a href="#">Travel 🛫</a>
-        <a href="#">Kaffee ☕️</a>
-        <a href="#">Beauty 💅</a>
-      </nav>
-    </header>
-    <div class="content">
-      <section id="landing" class="section">
-        <h1>Hello-World 🌍 News</h1>
-        <p>Willkommen auf deinem Portal für Hyper-News!</p>
-        <p>
-          Hello-World News ist ein Online-Nachrichtenportal auf dem du immer
-          Aktuell bleiben kannst. Wir arbeiten mit Hochdruck rund um Uhr an den
-          besten Artikeln und liefern die diese perfekt formatiert auf dein
-          digitales Endgerät
-        </p>
-      </section>
-      <section id="categories" class="section">
-        <h2>Unsere Kategorien:</h2>
-        <ul>
-          <li>Food 🍕</li>
-          <li>Travel 🛫</li>
-          <li>Kaffee ☕️</li>
-          <li>Beauty 💅</li>
-        </ul>
-      </section>
-      <section id="about" class="section">
-        <h2>Hyper</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum.
-        </p>
-        <h3>Was ist Hyper?</h3>
-        <ol>
-          <li>größer</li>
-          <li>lauter</li>
-          <li>weiter</li>
-          <li>🚀</li>
-        </ol>
-      </section>
+    <div class="wrapper">
+      <header class="header">
+        <img class="logo" src="./assets/logo.png" />
+        <nav class="navigation">
+          <a class="navigation__link" href="#">Food 🍕</a>
+          <a class="navigation__link" href="#">Travel 🛫</a>
+          <a class="navigation__link" href="#">Kaffee ☕️</a>
+          <a class="navigation__link" href="#">Beauty 💅</a>
+        </nav>
+      </header>
+      <div class="content">
+        <section id="landing" class="section">
+          <h1>Hello-World 🌍 News</h1>
+          <p>Willkommen auf deinem Portal für Hyper-News!</p>
+          <p>
+            Hello-World News ist ein Online-Nachrichtenportal auf dem du immer
+            Aktuell bleiben kannst. Wir arbeiten mit Hochdruck rund um Uhr an
+            den besten Artikeln und liefern die diese perfekt formatiert auf
+            dein digitales Endgerät
+          </p>
+        </section>
+        <section id="categories" class="section">
+          <h2>Unsere Kategorien:</h2>
+          <ul>
+            <li>Food 🍕</li>
+            <li>Travel 🛫</li>
+            <li>Kaffee ☕️</li>
+            <li>Beauty 💅</li>
+          </ul>
+        </section>
+        <section id="about" class="section">
+          <h2>Hyper</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+          <h3>Was ist Hyper?</h3>
+          <ol>
+            <li>größer</li>
+            <li>lauter</li>
+            <li>weiter</li>
+            <li>🚀</li>
+          </ol>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum.
+          </p>
+        </section>
+      </div>
     </div>
     <footer class="footer">
       <div>

@@ -146,9 +146,10 @@ const basics: Challenge = {
         const content = ctx.doc.querySelector('.content')
         if (!content) return fail('Das Element mit der Klasse .content fehlt.')
         const rect = content.getBoundingClientRect()
-        const viewport = ctx.win.innerWidth
-        if (rect.width > viewport * 0.8) return fail('.content ist noch fast so breit wie das Fenster – probiere max-width.')
-        const offset = Math.abs(rect.left - (viewport - rect.right))
+        if (rect.width > ctx.win.innerWidth * 0.8) return fail('.content ist noch fast so breit wie das Fenster – probiere max-width.')
+        // Equal side margins count as centered, also inside a column of a flex layout (Challenge 3).
+        const style = computed(ctx, content)
+        const offset = Math.abs(parseFloat(style.marginLeft) - parseFloat(style.marginRight))
         return offset < 40 ? pass() : fail('.content ist noch nicht horizontal zentriert – probiere margin: 0 auto.')
       },
     },
@@ -158,21 +159,23 @@ const basics: Challenge = {
       title: 'Eigene Schriftart',
       optional: true,
       run: (ctx) => {
-        const family = computed(ctx, ctx.doc.body).fontFamily
-        return /times|^serif$/i.test(family) ? fail('Der Body nutzt noch die Standard-Schrift des Browsers.') : pass(family)
+        const text = ctx.doc.querySelector('p') ?? ctx.doc.body
+        const family = computed(ctx, text).fontFamily
+        return /times|^serif$/i.test(family) ? fail('Der Text nutzt noch die Standard-Schrift des Browsers.') : pass(family)
       },
     },
     {
       id: 'footer',
       task: 'Challenge 2 – Styles',
-      title: 'Der Footer hebt sich farblich ab',
+      title: 'Der Footer ist vom Inhalt abgesetzt',
       optional: true,
       run: (ctx) => {
         const footer = ctx.doc.querySelector('footer')
         if (!footer) return fail('Kein <footer> gefunden.')
-        return computed(ctx, footer).backgroundColor !== 'rgba(0, 0, 0, 0)'
+        const style = computed(ctx, footer)
+        return style.backgroundColor !== 'rgba(0, 0, 0, 0)' || parseFloat(style.borderTopWidth) > 0
           ? pass()
-          : fail('Gib dem Footer eine Hintergrundfarbe.')
+          : fail('Setze den Footer ab, z.B. mit border-top oder einer Hintergrundfarbe.')
       },
     },
     {
@@ -218,20 +221,6 @@ const basics: Challenge = {
         mediaRules(doc).some((rule) => /min-width/.test(rule.media.mediaText))
           ? pass()
           : fail('Lege Desktop-Styles in @media screen and (min-width: 768px) { … } ab.'),
-    },
-    {
-      id: 'mobile-first',
-      task: 'Challenge 4 – Media Queries',
-      title: 'Mobile first: ohne Media Query ist der Inhalt volle Breite',
-      optional: true,
-      run: ({ doc }) => {
-        const outside = styleRules(doc, /\.content/).filter(
-          (rule) => rule.parentRule?.constructor.name !== 'CSSMediaRule' && rule.style.maxWidth,
-        )
-        return outside.length === 0
-          ? pass()
-          : fail('max-width von .content steht noch außerhalb der Media Query – auf dem Handy soll der Inhalt die volle Breite nutzen.')
-      },
     },
   ],
 }

@@ -1,47 +1,87 @@
-const TAX_RATE = 0.19
+const TAX_FIELD_ID = "tax-field";
+const NET_FIELD_ID = "net-field";
+const GROSS_FIELD_ID = "gross-field";
 
-const fields = {
-  net: document.getElementById('net-field'),
-  tax: document.getElementById('tax-field'),
-  gross: document.getElementById('gross-field'),
+function getValue(str) {
+  return parseFloat(str.replace(",", "."));
 }
 
-// Digits with an optional decimal comma and at most two decimals, e.g. "1234,5".
-const VALID_INPUT = /^\d+(,\d{0,2})?$/
-
-function parse(value) {
-  return Number(value.replace(',', '.'))
+function serializeValue(value) {
+  return value.toFixed(2).replace(".", ",");
 }
 
-function format(amount) {
-  return amount.toFixed(2).replace('.', ',')
+function isValid(str) {
+  return /^[0-9]+(,[0-9]*)?$/.test(str);
 }
 
-// Works in cents to avoid floating point rounding issues (e.g. 33.33 * 0.19).
-function calculate(source, amount) {
-  const cents = Math.round(amount * 100)
-  if (source === 'net') {
-    const tax = Math.round(cents * TAX_RATE)
-    return { net: cents, tax, gross: cents + tax }
+function setInvalid(field, invalid) {
+  if (invalid) {
+    field.classList.add("invalid");
+  } else {
+    field.classList.remove("invalid");
   }
-  if (source === 'gross') {
-    const net = Math.round(cents / (1 + TAX_RATE))
-    return { net, tax: cents - net, gross: cents }
-  }
-  const net = Math.round(cents / TAX_RATE)
-  return { net, tax: cents, gross: net + cents }
 }
 
-for (const [name, field] of Object.entries(fields)) {
-  field.addEventListener('input', () => {
-    const value = field.value.trim()
-    const valid = VALID_INPUT.test(value)
-    field.classList.toggle('invalid', !valid)
-    if (!valid) return
-
-    const result = calculate(name, parse(value))
-    for (const [other, otherField] of Object.entries(fields)) {
-      if (other !== name) otherField.value = format(result[other] / 100)
+function setFieldValues(fieldIdValuePairs) {
+  fieldIdValuePairs.forEach((fieldIdValuePair) => {
+    let field = document.getElementById(fieldIdValuePair.id);
+    if (field.value !== fieldIdValuePair.value) {
+      field.value = fieldIdValuePair.value;
     }
-  })
+  });
 }
+
+function clearFields(fieldIds) {
+  setFieldValues(fieldIds.map((id) => ({ id, value: "" })));
+}
+
+function linkCalculateFunction(fieldId, calculateFunction) {
+  document.getElementById(fieldId).addEventListener("input", (event) => {
+    let field = document.getElementById(fieldId);
+    let valid = isValid(event.target.value);
+    setInvalid(field, !valid);
+    if (valid) {
+      let value = getValue(event.target.value);
+      setFieldValues(calculateFunction(value));
+    } else {
+      clearFields(
+        [NET_FIELD_ID, TAX_FIELD_ID, GROSS_FIELD_ID].filter(
+          (id) => id !== fieldId
+        )
+      );
+    }
+  });
+}
+
+function calculateFromNetValue(netValue) {
+  let taxValue = netValue * 0.19;
+  let grossValue = netValue + taxValue;
+  return [
+    { id: TAX_FIELD_ID, value: serializeValue(taxValue) },
+    { id: GROSS_FIELD_ID, value: serializeValue(grossValue) },
+  ];
+}
+
+function calculateFromTaxValue(taxValue) {
+  let netValue = taxValue / 0.19;
+  let grossValue = netValue + taxValue;
+  return [
+    { id: NET_FIELD_ID, value: serializeValue(netValue) },
+    { id: GROSS_FIELD_ID, value: serializeValue(grossValue) },
+  ];
+}
+
+function calculateFromGrossValue(grossValue) {
+  let netValue = grossValue / 1.19;
+  let taxValue = netValue * 0.19;
+  return [
+    { id: NET_FIELD_ID, value: serializeValue(netValue) },
+    { id: TAX_FIELD_ID, value: serializeValue(taxValue) },
+  ];
+}
+
+window.addEventListener("load", () => {
+  linkCalculateFunction(NET_FIELD_ID, calculateFromNetValue);
+  linkCalculateFunction(TAX_FIELD_ID, calculateFromTaxValue);
+  linkCalculateFunction(GROSS_FIELD_ID, calculateFromGrossValue);
+});

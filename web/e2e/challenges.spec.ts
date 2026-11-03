@@ -18,8 +18,13 @@ async function runChecks(page: Page) {
   await expect(page.getByRole('button', { name: '▶ Prüfen' })).toBeEnabled({ timeout: 30_000 })
 }
 
+// Optional tasks that are up to the learner's own creativity, so no reference solves them.
+const FREE_TASKS = ['Dein eigener Button']
+
+/** Failed checks, optional ones included: a reference should not leave hints open. */
 async function failedChecks(page: Page): Promise<string[]> {
-  return page.locator('.check.fail:not(.optional)').allInnerTexts()
+  const failed = await page.locator('.check.fail').allInnerTexts()
+  return failed.filter((text) => !FREE_TASKS.some((task) => text.includes(task)))
 }
 
 test.beforeEach(async ({ page }) => {
@@ -95,8 +100,9 @@ test('viewport switcher emulates device widths for media queries', async ({ page
   const layout = async () => {
     const frame = await (await frameElement.elementHandle())!.contentFrame()
     return frame!.evaluate(() => {
-      const header = document.querySelector('header')
-      return { width: window.innerWidth, header: header && getComputedStyle(header).flexDirection }
+      // Header and content sit below each other on mobile and side by side from 768px on.
+      const wrapper = document.querySelector('header')?.parentElement
+      return { width: window.innerWidth, header: wrapper && getComputedStyle(wrapper).flexDirection }
     })
   }
   const viewports = page.getByRole('group', { name: 'Viewport' })
