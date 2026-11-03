@@ -20,6 +20,7 @@ export function Home() {
     <main className="page">
       <section className="hero">
         <div>
+          <p className="eyebrow">the peaklab academy</p>
           <h1>Lerne Frontend-Entwicklung, eine Challenge nach der anderen.</h1>
           <p>
             Von der ersten HTML-Datei bis zum eigenen React-Hook: Lies die Aufgabe, schreib deinen Code direkt im
@@ -88,7 +89,11 @@ export function Home() {
       </section>
 
       <footer className="page-footer">
-        Entwickelt mit 💖 bei the peak lab · Dein Code und Fortschritt werden nur in deinem Browser gespeichert.
+        the peaklab academy · Entwickelt mit 💖 bei{' '}
+        <a href="https://www.thepeaklab.com/" target="_blank" rel="noreferrer">
+          the peak lab
+        </a>{' '}
+        · Dein Code und Fortschritt werden nur in deinem Browser gespeichert.
       </footer>
     </main>
   )

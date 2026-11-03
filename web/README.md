@@ -1,4 +1,4 @@
-# Frontend Challenges – Web App
+# the peaklab academy – Web App
 
 A static React app (Vite + TypeScript, no server-side rendering) that turns the challenges of this repository into an interactive learning platform:
 

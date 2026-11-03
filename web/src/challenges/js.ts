@@ -24,6 +24,11 @@ async function expectConversion(
   const field = (name: string) => ctx.doc.getElementById(`${name}-field`) as HTMLInputElement | null
   const source = field(input)
   if (!source) return fail(`Das Feld #${input}-field fehlt – das Markup sollte unverändert bleiben.`)
+  // Clear values left over from earlier checks, so only freshly calculated results count.
+  for (const name of ['net', 'tax', 'gross']) {
+    const other = field(name)
+    if (other && name !== input) other.value = ''
+  }
   typeInto(ctx.win, source, value)
   await ctx.wait(60)
 
@@ -118,6 +123,7 @@ const taxCalculator: Challenge = {
         if (!input) return fail('Das Feld #net-field fehlt.')
         typeInto(ctx.win, input, '12a')
         await ctx.wait(60)
+        if (!hasErrorFeedback(ctx, input)) return fail('Bei „12a“ erscheint noch kein Feedback, das wieder verschwinden könnte.')
         typeInto(ctx.win, input, '12,00')
         await ctx.wait(60)
         return hasErrorFeedback(ctx, input) ? fail('Nach der Korrektur auf „12,00“ ist das Feld noch als fehlerhaft markiert.') : pass()

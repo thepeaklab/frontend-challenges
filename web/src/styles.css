@@ -1,20 +1,27 @@
 :root {
-  --bg: #f7f7f4;
+  /* Brand palette of thepeaklab.com: coral, near-black, mint and light blue */
+  --bg: #f4fafc;
   --surface: #ffffff;
-  --surface-2: #f0f0eb;
-  --border: #e2e2db;
-  --text: #1d1d1b;
-  --muted: #6b6b63;
-  --accent: #0d7a5f;
-  --accent-strong: #0a5f4a;
-  --accent-soft: #e2f3ec;
+  --surface-2: #eef4f7;
+  --border: #dde3e7;
+  --text: #282a2c;
+  --muted: #62686d;
+  --accent: #ff5c6c;
+  --accent-text: #c92a3d;
+  --accent-soft: #ffe9eb;
+  --cta: #90ffd1;
+  --cta-hover: #6ef5bd;
+  --cta-text: #191a1c;
+  --success: #0b7350;
+  --success-soft: #dcfff0;
+  --success-fill: #2fd398;
   --danger: #b42318;
   --danger-soft: #fdecea;
   --warning: #9a6700;
-  --code-bg: #f3f3ee;
+  --code-bg: #eef4f7;
   --radius: 10px;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.04);
-  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font: 'Helvetica Neue', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --topbar: 52px;
   color-scheme: light;
@@ -22,19 +29,22 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #121412;
-    --surface: #1a1d1b;
-    --surface-2: #232724;
-    --border: #2f3430;
-    --text: #e8eae6;
-    --muted: #9ba39c;
-    --accent: #3cc49b;
-    --accent-strong: #63d6b1;
-    --accent-soft: #173229;
+    --bg: #191a1c;
+    --surface: #222426;
+    --surface-2: #2b2e31;
+    --border: #383c40;
+    --text: #f1f2f3;
+    --muted: #a3a9ae;
+    --accent: #ff5c6c;
+    --accent-text: #ff7d8a;
+    --accent-soft: #3d2226;
+    --success: #90ffd1;
+    --success-soft: #1d3a30;
+    --success-fill: #90ffd1;
     --danger: #f97066;
     --danger-soft: #3a1d1a;
     --warning: #e3b341;
-    --code-bg: #202421;
+    --code-bg: #282b2e;
     --shadow: none;
     color-scheme: dark;
   }
@@ -53,11 +63,11 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 a:hover {
-  color: var(--accent-strong);
+  color: var(--text);
 }
 
 button {
@@ -94,9 +104,32 @@ button {
 }
 
 .brand {
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   color: var(--text);
   text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--text);
+}
+
+.brand-logo {
+  display: flex;
+  color: var(--accent);
+}
+
+.brand-logo svg {
+  width: auto;
+  height: 22px;
+}
+
+.brand-name {
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -140,20 +173,16 @@ button {
 }
 
 .button.primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  .button.primary {
-    color: #0b1310;
-  }
+  background: var(--cta);
+  border-color: var(--cta);
+  color: var(--cta-text);
+  font-weight: 600;
 }
 
 .button.primary:hover {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
+  background: var(--cta-hover);
+  border-color: var(--cta-hover);
+  color: var(--cta-text);
 }
 
 .button.danger {
@@ -191,8 +220,8 @@ button {
 }
 
 .badge.passed {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--success-soft);
+  color: var(--success);
 }
 
 .badge.started {
@@ -226,7 +255,7 @@ button {
 .progress span {
   display: block;
   height: 100%;
-  background: var(--accent);
+  background: var(--success-fill);
   transition: width 300ms;
 }
 
@@ -251,10 +280,20 @@ button {
 }
 
 .hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.hero .eyebrow {
   margin: 0 0 12px;
-  font-size: clamp(28px, 4vw, 42px);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
 }
 
 .hero p {
@@ -304,8 +343,9 @@ button {
 
 .category-header h2 {
   margin: 0;
-  font-size: 22px;
-  letter-spacing: -0.01em;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
 }
 
 .category-header p {
@@ -320,8 +360,8 @@ button {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--accent);
+  color: #fff;
   font-weight: 700;
 }
 
@@ -480,8 +520,8 @@ button {
 }
 
 .count.success {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--success-soft);
+  color: var(--success);
 }
 
 .count.error {
@@ -840,8 +880,8 @@ button {
 }
 
 .checks-summary.success {
-  border-color: var(--accent);
-  background: var(--accent-soft);
+  border-color: var(--success-fill);
+  background: var(--success-soft);
 }
 
 .check-group h3 {
@@ -878,8 +918,8 @@ button {
 }
 
 .check.pass .check-icon {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--success-soft);
+  color: var(--success);
 }
 
 .check.fail .check-icon {
@@ -909,9 +949,10 @@ button {
 
 .markdown h1 {
   margin: 0 0 16px;
-  font-size: 28px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 .markdown h2 {
@@ -971,7 +1012,7 @@ button {
 
 .markdown .task-list-item input {
   margin-right: 8px;
-  accent-color: var(--accent);
+  accent-color: var(--success-fill);
 }
 
 .md-table {

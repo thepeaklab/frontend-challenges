@@ -39,6 +39,8 @@ for (const { path, reference } of CHALLENGES) {
       await expect(page.locator('.markdown h1')).toBeVisible()
       await runChecks(page)
       await expect(page.locator('.checks-summary')).not.toHaveClass(/success/)
+      // Behaviour checks must not pass by accident when no code has been written yet.
+      if (path === 'js/01_tax-calculator') await expect(page.locator('.check.pass')).toHaveCount(0)
     })
 
     if (reference) {
