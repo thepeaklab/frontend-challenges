@@ -504,8 +504,8 @@ const tailwind: Challenge = {
     },
     {
       id: 'classes',
-      title: 'Mindestens 20 Elemente mit Utility-Klassen',
-      run: ({ doc }) => atLeast(doc.body.querySelectorAll('[class]:not([class=""])').length, 20, 'Elemente mit Klassen'),
+      title: 'Mindestens 18 Elemente mit Utility-Klassen',
+      run: ({ doc }) => atLeast(doc.body.querySelectorAll('[class]:not([class=""])').length, 18, 'Elemente mit Klassen'),
     },
     {
       id: 'sticky',
