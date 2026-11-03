@@ -81,3 +81,38 @@ test('external challenge links to the course', async ({ page }) => {
   await page.goto('/#/challenge/js/03_typescript')
   await expect(page.getByRole('link', { name: /Zum Kurs-Repository/ })).toHaveAttribute('href', /total-typescript/)
 })
+
+test('viewport switcher emulates device widths for media queries', async ({ page }) => {
+  await page.goto('/#/challenge/html_css/02_basics')
+  await page.getByRole('tab', { name: 'Ziel' }).click()
+  await page.getByRole('button', { name: 'In den Editor laden' }).click()
+  await page.getByRole('button', { name: 'Deinen Code überschreiben?' }).click()
+  await page.getByRole('tab', { name: 'Vorschau' }).click()
+
+  const frameElement = page.locator('iframe[title="Vorschau deiner Lösung"]')
+  const layout = async () => {
+    const frame = await (await frameElement.elementHandle())!.contentFrame()
+    return frame!.evaluate(() => {
+      const header = document.querySelector('header')
+      return { width: window.innerWidth, header: header && getComputedStyle(header).flexDirection }
+    })
+  }
+  const viewports = page.getByRole('group', { name: 'Viewport' })
+
+  await viewports.getByRole('button', { name: 'Mobil' }).click()
+  await expect.poll(layout).toEqual({ width: 390, header: 'column' })
+
+  await viewports.getByRole('button', { name: 'Tablet' }).click()
+  await expect.poll(layout).toEqual({ width: 768, header: 'row' })
+
+  await viewports.getByRole('button', { name: 'Desktop' }).click()
+  await expect.poll(layout).toEqual({ width: 1280, header: 'row' })
+
+  // The choice is remembered and the device is scaled down to fit the pane.
+  await viewports.getByRole('button', { name: 'Mobil' }).click()
+  await page.reload()
+  await expect(page.getByRole('button', { name: 'Mobil' })).toHaveAttribute('aria-pressed', 'true')
+  await expect.poll(layout).toEqual({ width: 390, header: 'column' })
+  const box = await frameElement.boundingBox()
+  expect(box!.width).toBeLessThan(390)
+})

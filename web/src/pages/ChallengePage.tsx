@@ -8,6 +8,7 @@ import { CodeEditor } from '../components/CodeEditor'
 import { ConfirmButton } from '../components/ConfirmButton'
 import { Markdown, readmeImages } from '../components/Markdown'
 import { PreviewFrame, type ConsoleEntry } from '../components/PreviewFrame'
+import { useViewport, ViewportBar, ViewportFrame, type ViewportId } from '../components/ViewportFrame'
 import { githubUrl, readme } from '../content/repo'
 import { buildDocument, reactRuntimeUrl } from '../preview/build'
 import { clearFiles, loadFiles, resetProgress, saveFiles, updateProgress, useProgress } from '../storage'
@@ -98,6 +99,7 @@ function Workspace({ challenge }: { challenge: Challenge }) {
   const [activePath, setActivePath] = useState(() => challenge.entry && files[challenge.entry] !== undefined ? challenge.entry : paths[0])
   const [infoTab, setInfoTab] = useState<InfoTab>('task')
   const [outputTab, setOutputTab] = useState<OutputTab>('preview')
+  const [viewport, setViewport] = useViewport()
   const [results, setResults] = useState<CheckResult[]>()
   const [running, setRunning] = useState(false)
   const [consoleEntries, setConsoleEntries] = useState<ConsoleEntry[]>([])
@@ -246,15 +248,29 @@ function Workspace({ challenge }: { challenge: Challenge }) {
               <span className={`count ${errorCount ? 'error' : ''}`}>{consoleEntries.length}</span>
             )}
           </button>
-          <button className="icon-button" onClick={() => setReloadCount((n) => n + 1)} title="Vorschau neu laden" aria-label="Vorschau neu laden">
-            ↻
-          </button>
         </div>
+        {outputTab === 'preview' && (
+          <ViewportBar viewport={viewport} onChange={setViewport}>
+            <button className="icon-button" onClick={() => setReloadCount((n) => n + 1)} title="Vorschau neu laden" aria-label="Vorschau neu laden">
+              ↻
+            </button>
+          </ViewportBar>
+        )}
         <div className="output-body">
           <div className="preview-host" hidden={outputTab !== 'preview'}>
-            <PreviewFrame key={reloadCount} srcDoc={previewDoc} title="Vorschau deiner Lösung" onConsole={addConsoleEntry} />
+            <ViewportFrame viewport={viewport}>
+              <PreviewFrame key={reloadCount} srcDoc={previewDoc} title="Vorschau deiner Lösung" onConsole={addConsoleEntry} />
+            </ViewportFrame>
           </div>
-          {outputTab === 'goal' && <Goal challenge={challenge} source={source} onLoadReference={loadReference} />}
+          {outputTab === 'goal' && (
+            <Goal
+              challenge={challenge}
+              source={source}
+              viewport={viewport}
+              onViewportChange={setViewport}
+              onLoadReference={loadReference}
+            />
+          )}
           {outputTab === 'console' && <ConsoleView entries={consoleEntries} />}
         </div>
       </section>
@@ -262,7 +278,15 @@ function Workspace({ challenge }: { challenge: Challenge }) {
   )
 }
 
-function Goal({ challenge, source, onLoadReference }: { challenge: Challenge; source: string; onLoadReference: () => void }) {
+interface GoalProps {
+  challenge: Challenge
+  source: string
+  viewport: ViewportId
+  onViewportChange: (id: ViewportId) => void
+  onLoadReference: () => void
+}
+
+function Goal({ challenge, source, viewport, onViewportChange, onLoadReference }: GoalProps) {
   const [showReference, setShowReference] = useState(false)
   const images = readmeImages(source, challenge.dir)
   const referenceDoc = useMemo(
@@ -303,9 +327,14 @@ function Goal({ challenge, source, onLoadReference }: { challenge: Challenge; so
             </ConfirmButton>
           </div>
           {showReference && (
-            <div className="reference-frame">
-              <PreviewFrame srcDoc={referenceDoc} title="Vorschau der Musterlösung" />
-            </div>
+            <>
+              <ViewportBar viewport={viewport} onChange={onViewportChange} />
+              <div className="reference-frame">
+                <ViewportFrame viewport={viewport}>
+                  <PreviewFrame srcDoc={referenceDoc} title="Vorschau der Musterlösung" />
+                </ViewportFrame>
+              </div>
+            </>
           )}
         </div>
       ) : (
