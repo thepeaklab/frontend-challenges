@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: system-ui, sans-serif;
+  color: #1f2937;
+  background: linear-gradient(160deg, #e0f2fe, #f8fafc);
+  transition: background 600ms;
+}
+
+body.weather-clear {
+  background: linear-gradient(160deg, #fde68a, #fef3c7);
+}
+
+body.weather-rain {
+  background: linear-gradient(160deg, #94a3b8, #cbd5e1);
+}
+
+.app {
+  text-align: center;
+}
+
+.icon {
+  font-size: 5rem;
+}
+
+.temperature {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.25rem;
+}

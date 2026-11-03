@@ -22,6 +22,10 @@ For advanced learners, the introduction may be skipped.
 | 2   | [js](./js/)             |
 | 3   | [react](./react/)       |
 
+### Web App: the peaklab academy
+
+All challenges can also be solved directly in the browser: with an editor, live preview and automated feedback. See [web/README.md](./web/README.md) for details and local development (`./dev.sh setup && ./dev.sh start`).
+
 ### Other Challenges
 
 - [Advent of Code](https://adventofcode.com)

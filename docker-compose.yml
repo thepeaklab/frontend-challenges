@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    image: frontend-challenges-web
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - web_node_modules:/app/web/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=${CHOKIDAR_USEPOLLING:-false}
+
+  e2e:
+    image: mcr.microsoft.com/playwright:v1.64.1-noble
+    profiles: ["test"]
+    working_dir: /app/web
+    ipc: host
+    volumes:
+      - .:/app
+      - web_node_modules:/app/web/node_modules
+    environment:
+      - CI=true
+
+volumes:
+  web_node_modules:
