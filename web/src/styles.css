@@ -1,5 +1,5 @@
 :root {
-  /* Brand palette of thepeaklab.com: coral, near-black, mint and light blue */
+  /* Brand palette of thepeaklab.com: coral, near-black and light blue */
   --bg: #f4fafc;
   --surface: #ffffff;
   --surface-2: #eef4f7;
@@ -9,12 +9,15 @@
   --accent: #ff5c6c;
   --accent-text: #c92a3d;
   --accent-soft: #ffe9eb;
-  --cta: #90ffd1;
-  --cta-hover: #6ef5bd;
+  --cta: #ff5c6c;
+  --cta-hover: #ff7a87;
   --cta-text: #191a1c;
-  --success: #0b7350;
-  --success-soft: #dcfff0;
-  --success-fill: #2fd398;
+  --success: #c92a3d;
+  --success-soft: #ffe9eb;
+  --success-fill: #ff5c6c;
+  /* The "geschafft" badge stays green */
+  --done: #0b7350;
+  --done-soft: #dcfff0;
   --danger: #b42318;
   --danger-soft: #fdecea;
   --warning: #9a6700;
@@ -38,9 +41,11 @@
     --accent: #ff5c6c;
     --accent-text: #ff7d8a;
     --accent-soft: #3d2226;
-    --success: #90ffd1;
-    --success-soft: #1d3a30;
-    --success-fill: #90ffd1;
+    --success: #ff7d8a;
+    --success-soft: #3d2226;
+    --success-fill: #ff5c6c;
+    --done: #90ffd1;
+    --done-soft: #1d3a30;
     --danger: #f97066;
     --danger-soft: #3a1d1a;
     --warning: #e3b341;
@@ -220,8 +225,8 @@ button {
 }
 
 .badge.passed {
-  background: var(--success-soft);
-  color: var(--success);
+  background: var(--done-soft);
+  color: var(--done);
 }
 
 .badge.started {
@@ -923,8 +928,8 @@ button {
 }
 
 .check.fail .check-icon {
-  background: var(--danger-soft);
-  color: var(--danger);
+  background: var(--surface-2);
+  color: var(--text);
 }
 
 .check.fail.optional .check-icon {
