@@ -12,12 +12,10 @@
   --cta: #ff5c6c;
   --cta-hover: #f04a5b;
   --cta-text: #ffffff;
-  --success: #c92a3d;
-  --success-soft: #ffe9eb;
-  --success-fill: #ff5c6c;
-  /* The "geschafft" badge stays green */
-  --done: #0b7350;
-  --done-soft: #dcfff0;
+  /* Green marks everything that is correct: passed checks, "geschafft" */
+  --success: #0b7350;
+  --success-soft: #dcfff0;
+  --success-fill: #2fd398;
   --danger: #b42318;
   --danger-soft: #fdecea;
   --warning: #9a6700;
@@ -41,11 +39,9 @@
     --accent: #ff5c6c;
     --accent-text: #ff7d8a;
     --accent-soft: #3d2226;
-    --success: #ff7d8a;
-    --success-soft: #3d2226;
-    --success-fill: #ff5c6c;
-    --done: #90ffd1;
-    --done-soft: #1d3a30;
+    --success: #90ffd1;
+    --success-soft: #1d3a30;
+    --success-fill: #90ffd1;
     --danger: #f97066;
     --danger-soft: #3a1d1a;
     --warning: #e3b341;
@@ -225,8 +221,8 @@ button {
 }
 
 .badge.passed {
-  background: var(--done-soft);
-  color: var(--done);
+  background: var(--success-soft);
+  color: var(--success);
 }
 
 .badge.started {
@@ -260,7 +256,7 @@ button {
 .progress span {
   display: block;
   height: 100%;
-  background: var(--success-fill);
+  background: var(--accent);
   transition: width 300ms;
 }
 
@@ -882,6 +878,10 @@ button {
 .checks-summary .progress {
   margin-top: 10px;
   background: var(--border);
+}
+
+.checks-summary .progress span {
+  background: var(--success-fill);
 }
 
 .checks-summary.success {
